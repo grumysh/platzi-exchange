@@ -6,10 +6,13 @@
 </template>
 
 <script>
+// Se importa el componente Hello Word
 import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
+  // Establece un nombre para el componente
   name: "App",
+  // Se declaran los componentes que se van a usar.
   components: {
     HelloWorld
   }

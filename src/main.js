@@ -1,8 +1,12 @@
+// Importa las librería desde npm, se identifican las librerías porque no tienen un './' o '/'
 import Vue from "vue";
+// Importa el componente App
 import App from "./App.vue";
 
 Vue.config.productionTip = false;
 
+// Instancia de view, la función $mount tiene el mismo proposito que el elemento 'el'
+// La función render es una forma de reemplazar la instancia de la aplicación dentro del componente.
 new Vue({
   render: h => h(App)
 }).$mount("#app");
