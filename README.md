@@ -9,6 +9,9 @@ Ejemplo del uso de vue-router y vue-resource.
 - [**Pug.js**](https://pugjs.org/language/attributes.html): Es un motor de plantilla de Node.js con el que se escribe código HTML de una sintaxis mucho más sencilla, clara y directa, tanto a la hora de escribir como de leer y modificar.
 - [**tailwindcss**](https://tailwindcss.com/docs/installation/): framework de css que tiene utilidades de CSS, en vez de preocuparte por decidir que componente usar,TailwindCSS te da clases que hacen algo específico en CSS como poner texto en negritas, redondear bordes, poner sombras y cosas atómicas y pequeñas.
 
+#### Dependencias
+- [**Vue Router**](https://router.vuejs.org/)
+
 ### **Pasos para Ejecutar**
 
 - Clonar el proyecto del repositorio de git

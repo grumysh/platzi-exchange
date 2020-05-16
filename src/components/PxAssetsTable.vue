@@ -1,24 +1,25 @@
 <template lang="pug">
-  table
-    thead
+  div
+    table
+      thead
         tr(class="bg-gray-100 border-b-2 border-gray-400")
-            th
-            th
-                span Ranking
-            th Nombre
-            th Precio
-            th Cap. de Mercado
-            th Variación 24hs
-            td(class="hidden sm:block")
-    tbody
+          th
+          th
+            span Ranking
+          th Nombre
+          th Precio
+          th Cap. de Mercado
+          th Variación 24hs
+          td(class="hidden sm:block")
+      tbody
         tr(class="border-b border-gray-200 hover:bg-gray-100 hover:bg-orange-100")
-            td
-            td
-            td
-            td
-            td
-            td
-            td(class="hidden sm:block")
+          td
+          td
+          td
+          td
+          td
+          td
+          td(class="hidden sm:block")
 </template>
 <script>
 export default {
