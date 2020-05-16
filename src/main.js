@@ -2,6 +2,7 @@
 import Vue from "vue";
 // Importa el componente App
 import App from "./App.vue";
+import "@/assets/css/tailwind.css";
 
 Vue.config.productionTip = false;
 

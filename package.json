@@ -11,9 +11,11 @@
     "core-js": "^3.6.4",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
+    "tailwindcss": "^1.1.2",
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@ianaya89/vue-cli-plugin-tailwind": "~1.1.0",
     "@vue/cli-plugin-babel": "~4.3.0",
     "@vue/cli-plugin-eslint": "~4.3.0",
     "@vue/cli-service": "~4.3.0",

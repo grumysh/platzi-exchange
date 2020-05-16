@@ -11,7 +11,7 @@ export default {
   props: {
     msg: String
   }
-}
+};
 </script>
 
 <!-- scoped se usa cuando los estilos solo se quieren aplicar para solo al componente -->
