@@ -1,12 +1,21 @@
 <template lang="pug">
-    px-assets-table
+    px-assets-table(:assets="assets")
 </template>
 <script>
-import PxAssetsTable from "@/components/PxAssetsTable.vue"
+import api from '@/api'
+import PxAssetsTable from '@/components/PxAssetsTable.vue'
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     PxAssetsTable
+  },
+  data() {
+    return {
+      assets: []
+    }
+  },
+  created() {
+    api.getAssets().then(assets => (this.assets = assets))
   }
 }
 </script>

@@ -6,16 +6,16 @@
 
 <script>
 // Se importa el componente Hello Word
-import PxHeader from "@/components/PxHeader.vue"
+import PxHeader from '@/components/PxHeader.vue'
 
 export default {
   // Establece un nombre para el componente
-  name: "App",
+  name: 'App',
   // Se declaran los componentes que se van a usar.
   components: {
     PxHeader
   }
-};
+}
 </script>
 
 <style></style>

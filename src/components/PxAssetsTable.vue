@@ -12,8 +12,9 @@
           th Variación 24hs
           td(class="hidden sm:block")
       tbody
-        tr(class="border-b border-gray-200 hover:bg-gray-100 hover:bg-orange-100")
+        tr(v-for="asset in assets" class="border-b border-gray-200 hover:bg-gray-100 hover:bg-orange-100")
           td
+            img(v-bind:src="`https://static.coincap.io/assets/icons/${asset.symbol.toLowerCase()}@2x.png`" :alt="asset.name")
           td
           td
           td
@@ -23,9 +24,9 @@
 </template>
 <script>
 export default {
-  name: "PxAssetsTable",
+  name: 'PxAssetsTable',
   props: {
-    assetes: {
+    assets: {
       type: Array,
       default: () => []
     }
@@ -35,11 +36,11 @@ export default {
 
 <style scoped>
 .up::before {
-  content: "👆";
+  content: '👆';
 }
 
 .down::before {
-  content: "👇";
+  content: '👇';
 }
 
 td {
