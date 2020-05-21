@@ -8,6 +8,7 @@ Ejemplo del uso de vue-router y vue-resource.
 - [**Vue**](https://vuejs.org/): Vue es un framework progresivo para construir interfaces de usuario.
 - [**Pug.js**](https://pugjs.org/language/attributes.html): Es un motor de plantilla de Node.js con el que se escribe código HTML de una sintaxis mucho más sencilla, clara y directa, tanto a la hora de escribir como de leer y modificar.
 - [**tailwindcss**](https://tailwindcss.com/docs/installation/): framework de css que tiene utilidades de CSS, en vez de preocuparte por decidir que componente usar,TailwindCSS te da clases que hacen algo específico en CSS como poner texto en negritas, redondear bordes, poner sombras y cosas atómicas y pequeñas.
+- [**Numeral.js**](http://numeraljs.com/) librería de javascript para formatear y manipular números.
 
 #### Dependencias
 - [**Vue Router**](https://router.vuejs.org/)
