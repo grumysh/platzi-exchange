@@ -16,10 +16,11 @@
           td
             img(v-bind:src="`https://static.coincap.io/assets/icons/${asset.symbol.toLowerCase()}@2x.png`" :alt="asset.name")
           td
-          td
-          td
-          td
-          td
+            b # {{asset.rank}}
+          td {{asset.name}}
+          td {{asset.priceUsd | dollar}}
+          td {{asset.marketCapUsd | dollar}}
+          td {{asset.changePercent24Hr | dollar}}
           td(class="hidden sm:block")
 </template>
 <script>
