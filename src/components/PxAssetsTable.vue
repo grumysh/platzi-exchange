@@ -31,15 +31,24 @@
           td(
             :class="asset.changePercent24Hr.includes('-') ? 'text-red-600':'text-green-600'"
           ) {{asset.changePercent24Hr | percent}}
-          td(class="hidden sm:block")
+          td(class="hidden sm:block") 
+            px-button( @custom-click="gotToCoin(asset.id)")
+              span  Detail
 </template>
 <script>
+import PxButton from '@/components/PxButton'
 export default {
   name: 'PxAssetsTable',
+  components: { PxButton },
   props: {
     assets: {
       type: Array,
       default: () => []
+    }
+  },
+  methods: {
+    gotToCoin(id) {
+      this.$router.push({ name: 'coin-detail', params: { id: id } })
     }
   }
 }
