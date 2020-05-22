@@ -4,15 +4,25 @@
       thead
         tr(class="bg-gray-100 border-b-2 border-gray-400")
           th
-          th
-            span Ranking
+          th(
+            :class= "{up: this.sortOrder == 1, down: this.sortOrder == -1}"
+            ) 
+            span( class="underline cursor-pointer"
+              @click="chanSortOrder" ) Ranking
           th Nombre
           th Precio
           th Cap. de Mercado
           th Variación 24hs
           td(class="hidden sm:block")
+            input(
+              class="bg-gray-100 focus:outline-none border-b border-gray-400 py-2 px-4 block w-full appearance-none leading-normal"
+              id="filter"
+              placeholder="Buscar..."
+              type="text"
+              v-model="filter"
+            )
       tbody
-        tr(v-for="asset in assets" class="border-b border-gray-200 hover:bg-gray-100 hover:bg-orange-100")
+        tr(v-for="asset in filteredAssets" class="border-b border-gray-200 hover:bg-gray-100 hover:bg-orange-100")
           td
             img(class="w-10 h-10"
               v-bind:src="`https://static.coincap.io/assets/icons/${asset.symbol.toLowerCase()}@2x.png`" 
@@ -40,15 +50,42 @@ import PxButton from '@/components/PxButton'
 export default {
   name: 'PxAssetsTable',
   components: { PxButton },
+  data() {
+    return {
+      filter: '',
+      sortOrder: 1
+    }
+  },
   props: {
     assets: {
       type: Array,
       default: () => []
     }
   },
+  computed: {
+    filteredAssets() {
+      const altOrder = this.sortOrder === 1 ? -1 : 1
+      return this.assets
+        .filter(
+          a =>
+            a.symbol.toLowerCase().includes(this.filter.toLowerCase()) ||
+            a.name.toLowerCase().includes(this.filter.toLowerCase())
+        )
+        .sort((a, b) => {
+          if (parseInt(a.rank) > parseInt(b.rank)) {
+            return this.sortOrder
+          }
+
+          return altOrder
+        })
+    }
+  },
   methods: {
     gotToCoin(id) {
       this.$router.push({ name: 'coin-detail', params: { id: id } })
+    },
+    chanSortOrder() {
+      this.sortOrder = this.sortOrder === 1 ? -1 : 1
     }
   }
 }
