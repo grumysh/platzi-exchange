@@ -14,13 +14,23 @@
       tbody
         tr(v-for="asset in assets" class="border-b border-gray-200 hover:bg-gray-100 hover:bg-orange-100")
           td
-            img(v-bind:src="`https://static.coincap.io/assets/icons/${asset.symbol.toLowerCase()}@2x.png`" :alt="asset.name")
+            img(class="w-10 h-10"
+              v-bind:src="`https://static.coincap.io/assets/icons/${asset.symbol.toLowerCase()}@2x.png`" 
+              :alt="asset.name"
+              )
           td
             b # {{asset.rank}}
-          td {{asset.name}}
+          td
+            router-link( 
+              class="hover:underline text-green-600" 
+              :to="{ name:'coin-detail', params:{id:asset.id}}"
+              ) {{asset.name}}
+            small( class="ml-1 text-gray-500") {{asset.symbol}}
           td {{asset.priceUsd | dollar}}
           td {{asset.marketCapUsd | dollar}}
-          td {{asset.changePercent24Hr | dollar}}
+          td(
+            :class="asset.changePercent24Hr.includes('-') ? 'text-red-600':'text-green-600'"
+          ) {{asset.changePercent24Hr | percent}}
           td(class="hidden sm:block")
 </template>
 <script>
